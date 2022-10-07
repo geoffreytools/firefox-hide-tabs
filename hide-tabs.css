@@ -1,0 +1,99 @@
+/* hide native tabs while keeping window buttons and the title visible */
+
+/* remove tabs styling */
+
+#TabsToolbar tab[selected = true] *{
+    all: unset;
+}
+
+#TabsToolbar tab[selected = true] {
+    width: auto !important;
+    max-width: unset !important;
+}
+
+/* vertically align the title */ 
+
+#TabsToolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#TabsToolbar .tab-icon-image {
+    position: relative !important;
+    top: 2px !important;
+}
+
+/* horizontally align the title */
+
+#TabsToolbar .toolbar-items {
+    width: 100%;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    #TabsToolbar .toolbar-items {
+      margin-left: 50px;
+    }
+}
+
+
+#TabsToolbar scrollbox, #tabbrowser-arrowscrollbox {
+    display: flex !important;
+    align-items: center;
+}
+
+/* hide unwanted elements */
+
+#scrollbutton-up, #scrollbutton-down, #new-tab-button {
+    display: none;
+}
+
+#tabs-newtab-button {
+    display: none;
+}
+
+#TabsToolbar tab:not([selected = true]) {
+    display: none;
+}
+
+#TabsToolbar .tab-background {
+    display: none !important;
+}
+
+#TabsToolbar tab[selected = true] .tab-close-button {
+    display: none;
+}
+
+/* force display */
+
+#alltabs-button {
+    display: -moz-box !important;
+}
+
+
+/* prevent grabbing the title from extracting the tab */
+
+#TabsToolbar .tabbrowser-tab {
+    display: inline;
+    pointer-events : none;
+}
+
+/* loading animation */
+
+#TabsToolbar .tab-throbber[busy = true]::before {
+    display: none;
+}
+
+#TabsToolbar tab[selected = true][busy = true]::before {
+   content: "...";
+}
+
+
+/* Force Tree-Style-Tab to display as big as other menu items */
+
+#sidebar-header {
+    font-size: 1em !important;
+}
