@@ -19,6 +19,11 @@
     align-items: center;
 }
 
+#TabsToolbar tab .tab-stack {
+    display: flex;
+    align-items: center;
+}
+
 #TabsToolbar .tab-icon-image {
     position: relative !important;
     top: 2px !important;
@@ -87,7 +92,7 @@
     display: none;
 }
 
-#TabsToolbar tab[selected = true][busy = true]::before {
+#TabsToolbar tab[selected = true][busy = true] .tab-stack::before {
    content: "...";
 }
 
