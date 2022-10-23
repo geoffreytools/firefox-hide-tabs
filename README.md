@@ -8,7 +8,11 @@ It removes tabs from the toolbar but keeps the current tab's title and favicon, 
 
 ![Firefox window with the Tree Style Tab panel open](./README/tabs-open.png)
 
-It has been tested with Firefox 105 / Ubuntu 22. It is very likely that this hack will break at some point. I *may* maintain it.
+It has been tested with (Ubuntu 22):
+- Firefox 105 ([v1.0](releases/tag/v1.0))
+- Firefox 106 ([v2.0](releases/tag/v2.0))
+
+ I *may* continue to maintain it.
 
 ## How to use
 
