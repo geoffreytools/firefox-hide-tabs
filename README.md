@@ -11,6 +11,7 @@ It removes tabs from the toolbar but keeps the current tab's title and favicon, 
 It has been tested with (Ubuntu 22):
 - Firefox 105 ([v1.0](releases/tag/v1.0))
 - Firefox 106 ([v2.0](releases/tag/v2.0))
+- Firefox 108 ([v3.0](releases/tag/v3.0))
 
  I *may* continue to maintain it.
 
