@@ -2,26 +2,40 @@
 
 /* remove tabs styling */
 
-#TabsToolbar tab[selected = true] *{
+#TabsToolbar tab[selected = true] * {
     all: unset;
 }
 
-#TabsToolbar tab[selected = true] {
-    width: auto !important;
-    max-width: unset !important;
-}
 
-/* vertically align the title */ 
-
-#TabsToolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* Layout */ 
 
 #TabsToolbar tab .tab-stack {
-    display: flex;
-    align-items: center;
+    all: unset !important;
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap !important;
+    max-width: 20px !important;
+    overflow: hidden !important;
+}
+
+#TabsToolbar tab .tab-content {
+    max-width: calc(100vw - 300px) !important;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 800px) {
+    #TabsToolbar tab .tab-content {
+        max-width: calc(100vw - 170px) !important;
+    }
+}
+
+#TabsToolbar tab[selected = true] {
+    all: unset !important;
+    display: table !important;
+    margin: auto !important;
+    pointer-events: none;
 }
 
 #TabsToolbar .tab-icon-image {
@@ -29,28 +43,26 @@
     top: 2px !important;
 }
 
-/* horizontally align the title */
-
-#TabsToolbar .toolbar-items {
-    width: 100%;
-    margin-left: 80px;
-    display: flex;
-    justify-content: center;
+.titlebar-spacer[type="post-tabs"] {
+    width: 0px !important;
 }
 
-@media (max-width: 1000px) {
-    #TabsToolbar .toolbar-items {
-      margin-left: 50px;
+.titlebar-spacer[type="pre-tabs"] {
+    width: 140px !important;
+}
+
+@media (max-width: 800px) {
+    .titlebar-spacer[type="pre-tabs"] {
+        width: 10px !important;
     }
 }
 
 
-#TabsToolbar scrollbox, #tabbrowser-arrowscrollbox {
-    display: flex !important;
-    align-items: center;
-}
-
 /* hide unwanted elements */
+
+spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
+    display: none !important;
+}
 
 #scrollbutton-up, #scrollbutton-down, #new-tab-button {
     display: none;
@@ -72,19 +84,13 @@
     display: none;
 }
 
+
 /* force display */
 
 #alltabs-button {
     display: -moz-box !important;
 }
 
-
-/* prevent grabbing the title from extracting the tab */
-
-#TabsToolbar .tabbrowser-tab {
-    display: inline;
-    pointer-events : none;
-}
 
 /* loading animation */
 
